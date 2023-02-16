@@ -1,27 +1,12 @@
 package bootcamp.dominio;
 
-public class Course {
-    private String title;
-    private String description;
+public class Course extends Subject {
     private int hoursClass;
-
+    @Override
+    public double calcXp() {
+        return DEFAULT_XP * getHoursClass();
+    }
     public Course() {
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getHoursClass() {
@@ -35,8 +20,8 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                "title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
                 ", hoursClass=" + hoursClass +
                 '}';
     }

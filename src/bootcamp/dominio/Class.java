@@ -2,28 +2,15 @@ package bootcamp.dominio;
 
 import java.time.LocalDate;
 
-public class Class {
-    private String title;
-    private String description;
+public class Class extends Subject{
     private LocalDate date;
 
+
+    @Override
+    public double calcXp() {
+        return DEFAULT_XP + 20d;
+    }
     public Class() {
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public LocalDate getDate() {
@@ -37,9 +24,10 @@ public class Class {
     @Override
     public String toString() {
         return "Class{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                "title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
                 ", date=" + date +
                 '}';
     }
+
 }
